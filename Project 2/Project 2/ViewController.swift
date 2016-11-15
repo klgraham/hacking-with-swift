@@ -14,10 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     var countries = [String]()
-    var numberCorrect = 0
-    var numberOfAttempts = 0
+    var score = 0
     var correctAnswer = 0
     
     override func viewDidLoad() {
@@ -56,17 +56,17 @@ class ViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         var title: String
 
-        numberOfAttempts += 1
-        
         if sender.tag == correctAnswer {
             title = "Correct"
-            numberCorrect += 1
+            score += 1
         } else {
             title = "Wrong"
+            score -= 1
         }
         
-        let score = Float(numberCorrect) / Float(numberOfAttempts) * 100
-        let alertController = UIAlertController(title: title, message: "Your score is \(score)%", preferredStyle: .alert)
+        scoreLabel.text = "Score: \(score)"
+        
+        let alertController = UIAlertController(title: title, message: "", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         self.present(alertController, animated: true)
     }

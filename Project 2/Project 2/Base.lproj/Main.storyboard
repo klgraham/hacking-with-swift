@@ -42,13 +42,21 @@
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xr3-aL-n4a"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thl-7J-MrK">
+                                <rect key="frame" x="155.5" y="504" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Thl-7J-MrK" firstAttribute="centerX" secondItem="Eig-C1-qFo" secondAttribute="centerX" id="4fy-U7-Cao"/>
                             <constraint firstItem="8Iz-JI-Oe6" firstAttribute="top" secondItem="FEb-1d-23d" secondAttribute="bottom" constant="30" id="9Wj-lh-q1f"/>
                             <constraint firstItem="8Iz-JI-Oe6" firstAttribute="leading" secondItem="Eig-C1-qFo" secondAttribute="leading" id="BMb-Yo-v1S"/>
                             <constraint firstItem="Eig-C1-qFo" firstAttribute="top" secondItem="8Iz-JI-Oe6" secondAttribute="bottom" constant="30" id="Oa2-in-TH2"/>
                             <constraint firstItem="FEb-1d-23d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="anf-pt-Uhw"/>
+                            <constraint firstItem="Thl-7J-MrK" firstAttribute="top" secondItem="Eig-C1-qFo" secondAttribute="bottom" constant="44" id="eZA-cQ-jMX"/>
                             <constraint firstItem="FEb-1d-23d" firstAttribute="leading" secondItem="8Iz-JI-Oe6" secondAttribute="leading" id="gzm-O9-p3q"/>
                             <constraint firstItem="FEb-1d-23d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="sjA-cT-C5i"/>
                         </constraints>
@@ -58,6 +66,7 @@
                         <outlet property="button1" destination="FEb-1d-23d" id="uJI-Qd-e5f"/>
                         <outlet property="button2" destination="8Iz-JI-Oe6" id="kW6-5V-c3R"/>
                         <outlet property="button3" destination="Eig-C1-qFo" id="Dpp-c1-aK5"/>
+                        <outlet property="scoreLabel" destination="Thl-7J-MrK" id="6AW-Bm-eO4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
