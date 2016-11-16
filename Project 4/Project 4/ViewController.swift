@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    let websites = ["apple.com", "github.com", "google.com", "hackingwithswift.com"]
-//    var selectedWebsite: Int?
+    let websites = ["apple.com", "github.com", "google.com",
+                    "hackingwithswift.com", "youtube.com"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,18 +38,6 @@ class ViewController: UITableViewController {
         cell.textLabel?.text = websites[indexPath.row]
         return cell
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.selectedWebsite = indexPath.row
-//        self.performSegue(withIdentifier: "WebsiteLoadingSegue", sender: self)
-        
-//        if let detailView = storyboard?.instantiateViewController(withIdentifier: "Webview") as? DetailViewController {
-//            self.selectedWebsite = indexPath.row
-//            detailView.siteToLoad = indexPath.row
-//            detailView.websites = websites
-//            navigationController?.pushViewController(detailView, animated: true)
-//        }
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
