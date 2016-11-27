@@ -45,12 +45,27 @@ class ViewController: UIViewController {
         view.addSubview(label5)
         
         let viewsMap = ["label1": label1, "label2": label2, "label3": label3, "label4": label4, "label5": label5]
-        let metrics = ["labelHeight": 88]
         
-        for label in viewsMap.keys {
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|", options: [], metrics: nil, views: viewsMap))
+        // VFL version is commented out
+//        let metrics = ["labelHeight": 88]
+//        
+//        for label in viewsMap.keys {
+//            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|", options: [], metrics: nil, views: viewsMap))
+//        }
+//        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(labelHeight@999)]-[label2(label1)]-[label3(label1)]-[label4(label1)]-[label5(label1)]-(>=10)-|", options: [], metrics: metrics, views: viewsMap))
+        
+        var previousLabel: UILabel!
+        
+        for label in viewsMap.values {
+            label.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+            label.heightAnchor.constraint(equalToConstant: 88).isActive = true
+            
+            if let previous = previousLabel {
+                label.topAnchor.constraint(equalTo: previous.bottomAnchor).isActive = true
+            }
+            
+            previousLabel = label
         }
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(labelHeight@999)]-[label2(label1)]-[label3(label1)]-[label4(label1)]-[label5(label1)]-(>=10)-|", options: [], metrics: metrics, views: viewsMap))
     }
     
     override var prefersStatusBarHidden: Bool {
