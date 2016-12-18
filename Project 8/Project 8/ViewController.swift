@@ -85,16 +85,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func submitTapped(_ sender: Any) {
-        print("proposed answer: \(currentAnswer.text!)")
-        print("solutions")
-        
-        for s in solutions {
-            print("solution: \(s)")
-        }
-        
         if let solutionPosition = solutions.index(of: currentAnswer.text!) {
             activatedButtons.removeAll()
-            print("Correct!")
             
             var splitClues = answersLabel.text!.components(separatedBy: "\n")
             splitClues[solutionPosition] = currentAnswer.text!
@@ -110,8 +102,6 @@ class ViewController: UIViewController {
             }
             return
         }
-        
-        print("wrong")
     }
     
     func levelUp(action: UIAlertAction!) {
